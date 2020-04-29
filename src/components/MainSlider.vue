@@ -75,7 +75,7 @@
     z-index: 2;
 
     h1{
-        font-size: 5rem;
+        font-size: 3rem;
         text-transform: uppercase;
         line-height: 1;
     }

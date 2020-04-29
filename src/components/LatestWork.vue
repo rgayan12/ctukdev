@@ -31,6 +31,10 @@
   <div class="container">
   <h3>See more of our work >>> </h3>
   </div>
+  <div v-for="item in ourwork" v-bind:key="item.id">
+    {{item.client_name}}
+
+  </div>
 </div>
 </template>
 
@@ -68,6 +72,7 @@
 
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+import axios from 'axios';
 
 export default {
     name: "latest-work-slider",
@@ -84,9 +89,32 @@ export default {
             el: '.swiper-pagination',
             clickable: true
           }
-        }
+        },
+        ourwork: [],
+      }
+    },
+    created(){
+      this.fetchWork();
+    },
+    methods: {
+      fetchWork(){
+        axios.get('http://twinkle.consider-this.co.uk/ctuk-backend/items/projects')
+        .then((response) => {
+          console.log(response)
+             this.ourwork = response.json().data;
+        // handle success
+        console.log(response);
+        })
+        .catch(function (error) {
+        // handle error
+        console.log(error);
+        })
+        .then(function () {
+        // always executed
+        });
       }
     }
+
    
 
 }
