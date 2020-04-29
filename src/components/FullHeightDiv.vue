@@ -1,6 +1,7 @@
 <template>
     <div>
-            <div class="full-height overlay red">
+            <div class="full-height overlay grey">
+                <div class="container">
                 <div class="div-text">
                     <h2>{{title}}</h2>
                     <p> {{summary}} </p>
@@ -8,13 +9,13 @@
                         <a href="#">Learn more about us</a>
                     </div> 
                 </div>
+                </div>
             </div>
     </div>
 </template>
 <style lang="scss">
     .full-height{
         height: 80vh;
-        background: #00000066;
         background: url('/images/greybackground.png');
         padding: 50px
     }
@@ -55,11 +56,11 @@
     }
 
     .overlay:after  {
-        opacity: .9;
+        opacity: .8;
     }
 
-    .red:after {
-        background-color: #00000066;
+    .grey:after {
+        background-color: #2e2e2e;
     }
 </style>
 <script>

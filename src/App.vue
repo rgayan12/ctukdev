@@ -7,7 +7,6 @@
     <router-view />
     -->
      <section class="main-navbar-section">
-      <div class="container">
         <vue-navigation-bar
           :options="navbarOptions"
           @vnb-item-clicked="vnbItemClicked"
@@ -36,7 +35,7 @@
             </div>
           </template> -->
         </vue-navigation-bar>
-      </div>
+
      </section>
      <!--
  <div id="nav">
@@ -45,6 +44,9 @@
     </div>
     -->
     <router-view />
+
+    <Footer-component></Footer-component>
+    <SocialFooter></SocialFooter>
     
   </div>
 </template>
@@ -137,10 +139,42 @@ body {
   z-index: 999;
 }
 
+.vnb-image {
+  width: 100%;
+  height: auto;
+}
+
+
+.vnb__brand-image-wrapper__link{
+  position: absolute;
+}
+
+.vnb__brand-image-wrapper__link__image {
+  max-height: 100%;
+}
+
 .vnb {
   font-family: "Montserrat", sans-serif;
   background: transparent;
 
+
+
+ .facebook-button, .twitter-button{
+   background: #fff;
+   padding: 10px;
+   border-radius: 50px;
+ }
+  .facebook-button::after{
+        color: #4F1A6F;        
+        font-family: "FontAwesome"; font-weight: 900; content: "\f09a";
+    
+  }
+
+.twitter-button::after{
+        color: #4F1A6F;        
+        font-family: "FontAwesome"; font-weight: 900; content: "\f099";
+    
+}
   .button-red {
     background: #ff3b30;
 
@@ -201,6 +235,9 @@ body {
 <script>
 import VueNavigationBar from "vue-navigation-bar";
 import 'vue-navigation-bar/dist/vue-navigation-bar.css'
+import FooterComponent from "@/components/Footer.vue";
+import SocialFooter from "@/components/SocialFooter.vue";
+
 
 
 export default {
@@ -212,49 +249,17 @@ export default {
         isUsingVueRouter: true,
         mobileBreakpoint: 992,
         brandImagePath: "./",
-        brandImage: require("vue-navigation-bar/src/assets/images/lockup-color.png"),
+        brandImage: require("@/assets/logo.png"),
         brandImageAltText: "brand-image",
         collapseButtonImageOpen: require("vue-navigation-bar/src/assets/images/collapse-menu-dark.png"),
         collapseButtonImageClose: require("vue-navigation-bar/src/assets/images/times.png"),
         showBrandImageInMobilePopup: true,
         ariaLabelMainNav: "Main Navigation",
         tooltipAnimationType: "shift-away",
-        menuOptionsLeft: [
-          {
+          menuOptionsRight: [
+            {
             type: "link",
-            text: "Why Dunder Mifflin",
-            subMenuOptions: [
-              {
-                type: "link",
-                text: "About",
-                subText:
-                  "Stupid corporate wet blankets. Like booze ever killed anyone.",
-                path: "/about"
-              },
-              {
-                type: "hr"
-              },
-              {
-                type: "link",
-                text: "About",
-                subText: "You're a presentation tool!",
-                path: "./about"
-              },
-              {
-                type: "hr"
-              },
-              {
-                type: "link",
-                text: "Blog",
-                subText:
-                  "I enjoy having breakfast in bed. I like waking up to the smell of bacon. Sue me.",
-                path: "./blog"
-              }
-            ]
-          },
-          {
-            type: "link",
-            text: "Contact",
+            text: "Work",
             subMenuOptions: [
               {
                 type: "link",
@@ -279,38 +284,70 @@ export default {
                   '<svg id="i-telephone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M3 12 C3 5 10 5 16 5 22 5 29 5 29 12 29 20 22 11 22 11 L10 11 C10 11 3 20 3 12 Z M11 14 C11 14 6 19 6 28 L26 28 C26 19 21 14 21 14 L11 14 Z" /> <circle cx="16" cy="21" r="4" /> </svg>'
               }
             ]
-          }
-        ],
-        menuOptionsRight: [
+          },
+            {
+            type: "link",
+            text: "About",
+            path: "./about"
+          },
           {
-            type: "button",
-            text: "Signup",
-            path: "./signup",
-            class: "button-red"
+            type: "link",
+            text: "What We Do",
+            subMenuOptions: [
+              {
+                type: "link",
+                text: "Customer Service",
+                path: "./customer-service",
+                iconLeft: '<i class="fa fa-user fa-fw"></i>'
+              },
+              {
+                type: "link",
+                text: "Accounting",
+                path: "./accounting",
+                iconLeft: '<i class="fa fa-star fa-fw"></i>'
+              },
+              {
+                type: "hr"
+              },
+              {
+                type: "link",
+                text: "Reception",
+                path: "./reception",
+                iconLeft:
+                  '<svg id="i-telephone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M3 12 C3 5 10 5 16 5 22 5 29 5 29 12 29 20 22 11 22 11 L10 11 C10 11 3 20 3 12 Z M11 14 C11 14 6 19 6 28 L26 28 C26 19 21 14 21 14 L11 14 Z" /> <circle cx="16" cy="21" r="4" /> </svg>'
+              }
+            ]
+          },
+           {
+            type: "link",
+            text: "Contact",
+            path: "./contact",
           },
           {
             type: "button",
-            text: "Login",
-            path: "./login",
-            iconRight:
-              '<svg id="i-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M22 6 L30 16 22 26 M30 16 L2 16" /> </svg>'
-          }
+            text: "",
+            path: "./signup",
+            class: "facebook-button"
+          },
+          {
+            type: "button",
+            text: "",
+            path: "./signup",
+            class: "twitter-button"
+          },
         ]
       }
     };
   },
   methods: {
     
-    vnbItemClicked(text) {
-     if (text === "About") {
-        alert("'About' was selected.");
-      }
-     
-    }
+    
     
   },
   components: {
-    VueNavigationBar
+    VueNavigationBar,
+    FooterComponent,
+    SocialFooter
   }
 };
 </script>

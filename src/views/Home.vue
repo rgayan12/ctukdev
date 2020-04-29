@@ -4,14 +4,16 @@
 
     <MainSlider></MainSlider>
 
-       <h2>Our Latest Work</h2>
+     
         <LatestWork></LatestWork>
-      <h3>See more of our work >>> </h3>
+      
 
       <FullHeightDiv title="What we do & Who are we" summary="We are a marketing agency with skills across a range of services. We work with organisation and franchises from a diverse range of industries from education to construction."></FullHeightDiv>
       
-    <Testimonials></Testimonials>
-    
+      <Testimonials></Testimonials>
+
+      <PurpleDiv></PurpleDiv>  
+
 
    </div>
 </template>
@@ -23,6 +25,9 @@ import MainSlider from "@/components/MainSlider.vue";
 import LatestWork from "@/components/LatestWork.vue";
 import FullHeightDiv from "@/components/FullHeightDiv.vue";
 import Testimonials from "@/components/Testimonials.vue";
+import PurpleDiv from "@/components/PurpleHeightDiv.vue";
+
+
 
 
 
@@ -34,7 +39,9 @@ export default {
     MainSlider,
     LatestWork,
     FullHeightDiv,
-    Testimonials
+    Testimonials,
+    PurpleDiv,
+    
   }
 };
 </script>

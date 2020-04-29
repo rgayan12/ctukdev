@@ -67,6 +67,7 @@
 }
 .slide-2{
     background-color: #f1c40f
+    
 }
 
 .agile{
@@ -76,6 +77,7 @@
     h1{
         font-size: 5rem;
         text-transform: uppercase;
+        line-height: 1;
     }
     .spotlight-text{
         font-size: 6rem;

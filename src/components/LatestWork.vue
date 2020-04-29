@@ -1,4 +1,8 @@
 <template>
+<div>
+<div class="container">
+    <h2>Our Latest Work</h2>
+</div>
  <swiper class="swiper" :options="swiperOption">
     <swiper-slide> 
         <img src="/images/Bira.png" /> 
@@ -24,6 +28,10 @@
     <swiper-slide>Slide 10</swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
+  <div class="container">
+  <h3>See more of our work >>> </h3>
+  </div>
+</div>
 </template>
 
 <style lang="scss">
