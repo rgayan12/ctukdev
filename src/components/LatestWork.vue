@@ -101,7 +101,8 @@ export default {
         axios.get('http://twinkle.consider-this.co.uk/ctuk-backend/items/projects')
         .then((response) => {
           console.log(response)
-             this.ourwork = response.json().data;
+
+             this.ourwork = response.data;
         // handle success
         console.log(response);
         })
