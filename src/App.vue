@@ -13,7 +13,7 @@
       <router-link to="/about">About</router-link>
     </div>
     -->
-
+    
     <router-view />
 
     <Footer-component></Footer-component>
@@ -22,7 +22,7 @@
 </template>
 
 <style lang="scss">
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
 
 html {
@@ -51,11 +51,15 @@ body {
 import FooterComponent from "@/components/Footer.vue";
 import SocialFooter from "@/components/SocialFooter.vue";
 
+
+
+
+
 export default {
   name: "app",
   components: {
     FooterComponent,
-    SocialFooter
+    SocialFooter,
   }
 };
 </script>

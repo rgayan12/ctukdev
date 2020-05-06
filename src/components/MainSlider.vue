@@ -1,10 +1,10 @@
 <template>
   <div>
-    <agile v-if="mainslides.length" :nav-buttons="false">
+    <agile v-if="mainslides.length" :nav-buttons="false" :options="options1">
       <div v-for="item in mainslides" v-bind:key="item.id">
         <div class="slide" :class="item.background_colour">
           <div class="row">
-            <div class="column">
+            <div class="col-md-12 col-lg-12 col-xl-6 img-div">
               <img
                 :src="
                   'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
@@ -14,8 +14,10 @@
                 class="img-fluid max-width-60"
               />
             </div>
-            <div class="column">
+            <div class="col-md-12 col-lg-12 col-xl-6">
+              <div class="padding-md-30px">
               <h1 v-html="item.message"></h1>
+              </div>
             </div>
           </div>
         </div>
@@ -82,12 +84,12 @@
   z-index: 2;
 
   h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     line-height: 1;
   }
   .spotlight-text {
-    font-size: 6rem;
+    font-size: 2rem;
   }
   .spotlight-text::after {
     content: "\a";
@@ -100,16 +102,13 @@
   align-items: center;
   justify-content: center;
 }
-.column {
-  flex: 50%;
-  align-items: center;
-}
-.column img {
+.img-div img {
   display: block;
   width: 100%;
   max-width: 600px; /*actual image width*/
   height: auto; /* maintain aspect ratio*/
   margin: auto; /*optional centering of image*/
+  margin-top: 20%;
 }
 
 .green {
@@ -124,6 +123,36 @@
 .orange {
   background-color: #ee7800;
 }
+
+@media (max-width: 1200px) {
+  .padding-md-30px{
+    padding: 30px;
+  }
+}
+
+
+@media(min-width: 768px){
+  .agile {
+  
+      h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .spotlight-text {
+      font-size: 6rem;
+    }
+}
+
+}
+
+@media(min-width: 1024px){
+.img-div img{
+  margin-top: 0;
+}
+}
+
+
 </style>
 
 <script>
@@ -137,7 +166,13 @@ export default {
   },
   data() {
     return {
-      mainslides: []
+      mainslides: [],
+      	options1: {
+				dots: true,
+				fade: true,
+				navButtons: false,
+        slidesToShow: 1,
+			},
     };
   },
   created() {

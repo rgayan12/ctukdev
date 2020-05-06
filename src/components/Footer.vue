@@ -3,7 +3,7 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-5 col-xl-4 col-md-5 col-sm-4 col-xs-12">
+          <div class="col-lg-5 col-xl-4 col-md-4 col-sm-4 col-xs-12">
             <ul class="adress">
               <span>Consider This UK Limited</span>
               <li>
