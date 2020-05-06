@@ -1,6 +1,11 @@
 <template>
   <div class="home">
     <!--<HelloWorld msg="Welcome to CTUK New Website" /> -->
+       <loading :active.sync="isLoading" 
+        :can-cancel="false" 
+        :is-full-page="fullPage" :opacity="0.9"></loading>
+
+
       <whiteNavBar></whiteNavBar>
     <MainSlider></MainSlider>
 
@@ -27,6 +32,10 @@ import Testimonials from "@/components/Testimonials.vue";
 import PurpleDiv from "@/components/PurpleHeightDiv.vue";
 import whiteNavBar from "@/components/WhiteNavBar.vue";
 
+   // Import component
+    import Loading from 'vue-loading-overlay';
+    // Import stylesheet
+    import 'vue-loading-overlay/dist/vue-loading.css';
 
 export default {
   name: "Home",
@@ -37,7 +46,17 @@ export default {
     FullHeightDiv,
     Testimonials,
     PurpleDiv,
-    whiteNavBar
+    whiteNavBar,
+    Loading
+  },
+     data() {
+        return {
+            isLoading: true,
+            fullPage: true
+        }
+  },
+  mounted(){
+    this.isLoading = false;
   }
 };
 </script>

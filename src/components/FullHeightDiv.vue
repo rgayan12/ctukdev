@@ -14,6 +14,13 @@
   </div>
 </template>
 <style lang="scss">
+
+@media(max-width: 786px){
+  .full-height{
+    height: 100% !important;
+  }
+}
+
 .full-height {
   height: 80vh;
   background: url("/images/greybackground.png");
