@@ -3,12 +3,13 @@
     <div class="purple-height overlay grey">
       <div class="container">
         <div class="div-text">
-          <div class="row text-center">
-            <div class="col-md-6">
+          <div class="row">
+           <!-- <div class="col-md-6">
               <h2>Take Your First Step</h2>
             </div>
-            <div class="col-md-6">
-              <button>Schedule your First Call</button>
+            -->
+            <div class="col-md-12">
+              <contactusbutton></contactusbutton>  
             </div>
           </div>
         </div>
@@ -25,7 +26,7 @@
 
 .row {
   display: flex;
-  align-items: center;
+ 
   justify-content: center;
 }
 
@@ -75,7 +76,14 @@
 }
 </style>
 <script>
+import contactusbutton from "@/components/ContactUsButton.vue";
+
 export default {
-  name: "FullHeightDiv"
+  name: "FullHeightDiv",
+
+  components: {
+    contactusbutton
+  }
+  
 };
 </script>

@@ -5,15 +5,17 @@
         <div class="div-text">
           <h2>{{ title }}</h2>
           <p>{{ summary }}</p>
-          <div class="right-text">
-            <a href="#">Learn more about us</a>
+
+          <div class="right-text" v-if="link == true">
+            <router-link to="./about">Learn more about us</router-link>
           </div>
+        
         </div>
       </div>
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 
 @media(max-width: 786px){
   .full-height{
@@ -22,7 +24,7 @@
 }
 
 .full-height {
-  height: 80vh;
+  height:  80vh;
   background: url("/images/greybackground.png");
   padding: 50px;
 }
@@ -75,7 +77,8 @@ export default {
   name: "FullHeightDiv",
   props: {
     title: String,
-    summary: String
+    summary: String,
+    link: Boolean
   }
 };
 </script>

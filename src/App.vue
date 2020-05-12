@@ -23,7 +23,7 @@
 
 <style lang="scss">
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,900;1,900&display=swap');
 
 html {
   width: 100%;
@@ -36,7 +36,7 @@ body {
   height: 100%;
   height: 100vh;
   width: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 #app {
@@ -45,6 +45,12 @@ body {
   width: 100%;
   line-height: 1.5;
 }
+
+
+
+
+
+
 </style>
 
 <script>

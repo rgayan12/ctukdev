@@ -1,16 +1,20 @@
 <template>
   <div>
-    <NavBar></NavBar>
+    <whiteNavBar></whiteNavBar>
 
-    <section class="info-section">
+    <div class="full-height overlay grey">
       <div class="container">
-        <div class="about">
+        <div class="div-text">
           <h1>About Us</h1>
-          <h4 v-html="page.content">
-          </h4>
+          <h4 v-html="page.content"></h4>
+
+          <div class="right-text" v-if="link == true">
+            <a href="#">Learn more about us</a>
+          </div>
+        
         </div>
       </div>
-    </section>
+    </div>
 
     <section class="team-section">
       <div class="container" v-if="team.length">
@@ -24,7 +28,7 @@
                 </div>
 
                 <div class="col-md-8">
-                   <div class="row col-md-12">{{item.bio}}</div>
+                   <div class="row col-md-12"><p>{{item.bio}}</p></div>
                    <div class="row text-center-bottom stats">
                     <div class="col-md-2 text-center right-ctuk-border hobby">{{item.hobby}} <span>Hobby</span></div>
                     <div class="col-md-2 text-center right-ctuk-border animal">{{item.animal}} <span>Animal</span></div>
@@ -44,7 +48,79 @@
 
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
+
+ @media(max-width: 786px){
+  .full-height{
+    height: 100% !important;
+  }
+  
+}
+
+
+
+.full-height {
+  margin-top: -80px;
+  height: 100vh;
+  background: url("/images/about.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px;
+}
+.div-text {
+  position: relative;
+  margin-top: 150px;
+  padding-top: 10px;
+  max-width: 100%;
+  width: 100%;
+  z-index: 100;
+  h2, h1 {
+    color: #fff;
+    font-size: 1.9rem;
+    border-bottom: 2px solid #fff;
+  }
+  p, h4 {
+    color: #fff;
+    font-size: 1.3em;
+  }
+  a {
+    color: #fff;
+  }
+  .right-text {
+    margin-top: 50px;
+    text-align: right;
+  }
+}
+
+@media(min-width: 1200px){
+  .div-text{
+    width: 60%;
+  }
+}
+.overlay {
+  position: relative;
+  z-index: 5;
+}
+
+.overlay:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.overlay:after {
+  opacity: 0.8;
+}
+
+.grey:after {
+  background-color: #2e2e2e;
+}
+
+
 
 .margin-bottom-20px{
   margin-bottom: 20px;
@@ -63,13 +139,13 @@
 
 
 .first-letter-large{
-  font-size: 6rem;
+  font-size: 7rem;
   margin: 0;
   color: #6c2482;
 }
 
-.info-section {
-  padding: 100px;
+.team-section{
+  padding-top: 20px;
   margin-top: 20px;
 }
 
@@ -104,7 +180,8 @@
 
 </style>
 <script>
-import NavBar from "@/components/RegularNavBar.vue";
+import whiteNavBar from "@/components/WhiteNavBar.vue";
+
 export default {
   name: "about",
 
@@ -115,7 +192,8 @@ export default {
     }
   },
   components: {
-    NavBar
+    whiteNavBar,
+
   },
   created(){
         this.fetchPage();

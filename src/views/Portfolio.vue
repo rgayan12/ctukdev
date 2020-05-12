@@ -1,6 +1,8 @@
 <template>
   <div>
-    <NavBar></NavBar>
+    <div class="dark-top">
+    <whiteNavBar></whiteNavBar>
+    </div>
 
     <section class="info-section">
       <div class="container">
@@ -26,11 +28,16 @@
   </div>
 </template>
 <style lang="scss">
+
+
+
 .info-section {
   margin-top: 4%;
 }
 
 .client-image {
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 48px;
   width: 100%;
   max-width: 400px; /*actual image width*/
   height: auto; /* maintain aspect ratio*/
@@ -47,15 +54,42 @@
     color: #fff;
     font-size: 1.5rem;
   }
+
+  .client-image{
+    filter:brightness(0.5)
+  }
 }
+
+.dark-top{
+  background-color: #4A4A4A;
+  height: 150px;
+
+  .vnb-image{
+  width: 80% !important;
+}
+
+.vnb{
+  //padding-top: 25px !important;
+}
+
+.vnb__menu-options--right{
+    padding-top: 40px;
+.vnb__menu-options__option__link{
+  font-size: 1.2em;
+
+}
+}
+}
+
 
 
 </style>
 <script>
-import NavBar from "@/components/RegularNavBar.vue";
+import whiteNavBar from "@/components/WhiteNavBar.vue";
+
 export default {
   components: {
-    NavBar,
+    whiteNavBar,
 
   },
   data(){
