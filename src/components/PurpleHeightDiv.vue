@@ -4,12 +4,12 @@
       <div class="container">
         <div class="div-text">
           <div class="row">
-           <!-- <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <h2>Take Your First Step</h2>
             </div>
             -->
             <div class="col-md-12">
-              <contactusbutton></contactusbutton>  
+              <contactusbutton></contactusbutton>
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@
 
 .row {
   display: flex;
- 
+
   justify-content: center;
 }
 
@@ -84,6 +84,5 @@ export default {
   components: {
     contactusbutton
   }
-  
 };
 </script>

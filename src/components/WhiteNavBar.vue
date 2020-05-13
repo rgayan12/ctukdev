@@ -121,12 +121,11 @@
   }
 
   .twitter-button::after {
-      content: '\f35a'; /* You should use \ and not /*/
+    content: "\f35a"; /* You should use \ and not /*/
     font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
     font-style: normal;
     font-weight: normal;
     color: #4f1a6f;
-   
   }
   .button-red {
     background: #ff3b30;
