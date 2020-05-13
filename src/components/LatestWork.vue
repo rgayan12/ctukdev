@@ -37,7 +37,8 @@
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <div class="container">
-      <h3>See more of our work >>></h3>
+      
+       <router-link to="./about"><h3>See more of our work >>></h3></router-link>
     </div>
   </div>
 </template>
@@ -85,11 +86,29 @@ export default {
     return {
       swiperOption: {
         slidesPerView: 5,
-        spaceBetween: 2,
+        spaceBetween: 1,
         pagination: {
           el: ".swiper-pagination",
           clickable: true
-        }
+        },
+          breakpoints: {
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 10
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            }
+          }
       },
       ourwork: []
     };

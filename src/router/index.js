@@ -13,11 +13,13 @@ const routes = [
   {
     path: "/about",
     name: "About",
+    meta: {  title: 'About Page - Example App' },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+     
   },
   {
     path: "/work",
@@ -32,7 +34,16 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+  scrollBehavior () {
+  return { x: 0, y: 0 }
+}
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title ?? 'Consider This'
+
+  next()
 });
 
 export default router;

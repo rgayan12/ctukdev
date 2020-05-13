@@ -104,7 +104,7 @@
 }
 
 .vnb {
-  font-family: "Montserrat", sans-serif;
+  //font-family: "Montserrat", sans-serif;
   background: transparent;
 
   .facebook-button,
@@ -115,16 +115,18 @@
   }
   .facebook-button::after {
     color: #4f1a6f;
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Brands";
     font-weight: 900;
     content: "\f09a";
   }
 
   .twitter-button::after {
+      content: '\f35a'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
     color: #4f1a6f;
-    font-family: "FontAwesome";
-    font-weight: 900;
-    content: "\f099";
+   
   }
   .button-red {
     background: #ff3b30;

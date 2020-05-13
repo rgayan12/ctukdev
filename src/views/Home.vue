@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <!--<HelloWorld msg="Welcome to CTUK New Website" /> -->
+
       <whiteNavBar></whiteNavBar>
     <MainSlider></MainSlider>
 
     <LatestWork></LatestWork>
 
     <FullHeightDiv
+      v-bind:link="true"
       title="What we do & Who are we"
       summary="We are a marketing agency with skills across a range of services. We work with organisation and franchises from a diverse range of industries from education to construction."
     ></FullHeightDiv>
@@ -37,7 +39,18 @@ export default {
     FullHeightDiv,
     Testimonials,
     PurpleDiv,
-    whiteNavBar
+    whiteNavBar,
+
+    
+  },
+     data() {
+        return {
+            isLoading: true,
+            fullPage: true
+        }
+  },
+  mounted(){
+    this.isLoading = false;
   }
 };
 </script>
