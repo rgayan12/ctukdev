@@ -5,7 +5,7 @@
     <section class="info-section">
       <div class="container">
         <div class="about">
-          <h1>This is an about page</h1>
+          <h1>This is a portfolio page</h1>
           <p>
             For the first time ever, all performing arts schools and colleges
             can list all their information on one site for all their courses,
@@ -29,7 +29,6 @@
 <script>
 import NavBar from "@/components/RegularNavBar.vue";
 export default {
-   
   components: {
     NavBar
   }
