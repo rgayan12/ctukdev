@@ -17,7 +17,7 @@
           " class="client-image"
         />
                 <div class="client-name">
-                  {{ item.client_name }}
+                  <router-link :to="{ name: 'ClientDetails', params: {id:item.slug} }"> {{ item.client_name }}</router-link>
                 </div>
               </div>
             </div>
@@ -88,6 +88,7 @@
 import whiteNavBar from "@/components/WhiteNavBar.vue";
 
 export default {
+  name: 'portfolio',
   components: {
     whiteNavBar,
 
@@ -104,7 +105,7 @@ export default {
   fetchWork() {
     this.$http
       .get(
-        "http://twinkle.consider-this.co.uk/ctuk-backend/items/projects?fields=featured_image.filename_disk,client_name,job_type,description,featured_image.title&filter[status]=published"
+        "http://twinkle.consider-this.co.uk/ctuk-backend/items/projects?fields=featured_image.filename_disk,client_name,job_type,description,slug,featured_image.title&filter[status]=published"
       )
       .then(response => {
         this.ourwork = response.data.data;

@@ -60,7 +60,7 @@
 
 
 .full-height {
-  margin-top: -80px;
+  margin-top: -180px;
   height: 100vh;
   background: url("/images/about.png");
   background-size: cover;

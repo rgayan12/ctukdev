@@ -2,13 +2,13 @@
   <div>
     <agile v-if="mainslides.length" :nav-buttons="false" :options="options1">
       <div v-for="item in mainslides" v-bind:key="item.id">
-        <div class="slide" :class="item.background_colour">
+        <div class="slide green" :class="green">
           <div class="row">
             <div class="col-md-12 col-lg-12 col-xl-6 img-div">
               <img
                 :src="
                   'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
-                    item.main_image.filename_disk
+                    item.featured_image.filename_disk
                 "
                 alt="header image"
                 class="img-fluid max-width-60"
@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-12 col-lg-12 col-xl-6">
               <div class="padding-md-30px">
-              <h1 v-html="item.message"></h1>
+              <h1 v-html="item.client_name"></h1>
               </div>
             </div>
           </div>
@@ -157,12 +157,16 @@
 
 <script>
 import { VueAgile } from "vue-agile";
-import axios from "axios";
+ 
 
 export default {
-  name: "main-slider",
+  name: "client-slider",
   components: {
     agile: VueAgile
+  },
+  props:{
+     slug: String,
+     slides: Array
   },
   data() {
     return {
@@ -176,21 +180,7 @@ export default {
     };
   },
   created() {
-    this.fetchSlides();
+    this.mainslides = this.slides;
   },
-  methods: {
-    fetchSlides() {
-      axios
-        .get(
-          "http://twinkle.consider-this.co.uk/ctuk-backend/items/headers?fields=main_image.filename_disk,name,message,background_colour,main_image.title&filter[status]=published"
-        )
-        .then(response => {
-          this.mainslides = response.data.data;
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    }
-  }
 };
 </script>

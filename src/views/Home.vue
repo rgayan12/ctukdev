@@ -2,7 +2,7 @@
   <div class="home">
     <!--<HelloWorld msg="Welcome to CTUK New Website" /> -->
 
-      <whiteNavBar></whiteNavBar>
+    <whiteNavBar></whiteNavBar>
     <MainSlider></MainSlider>
 
     <LatestWork></LatestWork>
