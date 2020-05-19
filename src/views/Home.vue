@@ -29,7 +29,6 @@ import Testimonials from "@/components/Testimonials.vue";
 import PurpleDiv from "@/components/PurpleHeightDiv.vue";
 import whiteNavBar from "@/components/WhiteNavBar.vue";
 
-
 export default {
   name: "Home",
   components: {
@@ -39,17 +38,15 @@ export default {
     FullHeightDiv,
     Testimonials,
     PurpleDiv,
-    whiteNavBar,
-
-    
+    whiteNavBar
   },
-     data() {
-        return {
-            isLoading: true,
-            fullPage: true
-        }
+  data() {
+    return {
+      isLoading: true,
+      fullPage: true
+    };
   },
-  mounted(){
+  mounted() {
     this.isLoading = false;
   }
 };

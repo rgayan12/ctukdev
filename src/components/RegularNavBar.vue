@@ -89,96 +89,93 @@
   position: relative;
   z-index: 999;
 
-
-.vnb__brand-image-wrapper__link {
-  position: absolute;
-  top: 0;
-}
-
-.vnb__brand-image-wrapper__link__image {
-  width: 20%;
-}
-
-
-.vnb {
-  font-family: "Montserrat", sans-serif;
-  background: transparent;
-
-  .facebook-button,
-  .twitter-button {
-    background: #fff;
-    padding: 10px;
-    border-radius: 50px;
-  }
-  .facebook-button::after {
-    color: #4f1a6f;
-    font-family: "FontAwesome";
-    font-weight: 900;
-    content: "\f09a";
+  .vnb__brand-image-wrapper__link {
+    position: absolute;
+    top: 0;
   }
 
-  .twitter-button::after {
-    color: #4f1a6f;
-    font-family: "FontAwesome";
-    font-weight: 900;
-    content: "\f099";
+  .vnb__brand-image-wrapper__link__image {
+    width: 20%;
   }
-  .button-red {
-    background: #ff3b30;
 
-    &:hover {
-      background: darken(#ff3b30, 10%);
+  .vnb {
+    font-family: "Montserrat", sans-serif;
+    background: transparent;
+
+    .facebook-button,
+    .twitter-button {
+      background: #fff;
+      padding: 10px;
+      border-radius: 50px;
     }
-  }
+    .facebook-button::after {
+      color: #4f1a6f;
+      font-family: "FontAwesome";
+      font-weight: 900;
+      content: "\f09a";
+    }
 
-  &__menu-options {
-    &__option {
-      &__link {
-        color: #000;
+    .twitter-button::after {
+      color: #4f1a6f;
+      font-family: "FontAwesome";
+      font-weight: 900;
+      content: "\f099";
+    }
+    .button-red {
+      background: #ff3b30;
+
+      &:hover {
+        background: darken(#ff3b30, 10%);
       }
-      &__button {
-        &__icon {
-          svg {
-            margin-top: -3px;
+    }
+
+    &__menu-options {
+      &__option {
+        &__link {
+          color: #000;
+        }
+        &__button {
+          &__icon {
+            svg {
+              margin-top: -3px;
+            }
           }
         }
       }
     }
-  }
 
-  &__popup {
-    &__bottom {
-      &__menu-options {
-        &__option {
-          &__link {
-            &__icon {
-              svg {
-                margin-top: -4px;
+    &__popup {
+      &__bottom {
+        &__menu-options {
+          &__option {
+            &__link {
+              &__icon {
+                svg {
+                  margin-top: -4px;
+                }
               }
             }
           }
         }
       }
     }
+
+    .custom-section-content {
+      width: 100%;
+
+      @media (min-width: 568px) {
+        width: 50%;
+      }
+
+      @media (min-width: 992px) {
+        width: 15%;
+      }
+
+      @media (min-width: 1200px) {
+        width: 20%;
+      }
+    }
   }
-
-  .custom-section-content {
-    width: 100%;
-
-    @media (min-width: 568px) {
-      width: 50%;
-    }
-
-    @media (min-width: 992px) {
-      width: 15%;
-    }
-
-    @media (min-width: 1200px) {
-      width: 20%;
-    }
-  }
-}
-
 }
 </style>
 <script>

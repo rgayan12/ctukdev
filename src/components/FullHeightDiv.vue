@@ -9,22 +9,20 @@
           <div class="right-text" v-if="link == true">
             <router-link to="./about">Learn more about us</router-link>
           </div>
-        
         </div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
-
-@media(max-width: 786px){
-  .full-height{
+@media (max-width: 786px) {
+  .full-height {
     height: 100% !important;
   }
 }
 
 .full-height {
-  height:  80vh;
+  height: 80vh;
   background: url("/images/greybackground.png");
   padding: 50px;
 }

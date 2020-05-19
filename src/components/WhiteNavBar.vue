@@ -1,9 +1,9 @@
 <template>
   <section class="main-navbar-section">
     <div class="container nav-container">
-    <vue-navigation-bar :options="navbarOptions">
-      <!-- Custom Slot - Uncomment to use -->
-      <!-- <template v-slot:custom-section>
+      <vue-navigation-bar :options="navbarOptions">
+        <!-- Custom Slot - Uncomment to use -->
+        <!-- <template v-slot:custom-section>
             <div class="custom-section-content">
               <div class="input-group input-group-sm">
                 <input
@@ -25,7 +25,7 @@
               </div>
             </div>
           </template> -->
-    </vue-navigation-bar>
+      </vue-navigation-bar>
     </div>
   </section>
 </template>
@@ -123,12 +123,11 @@
   }
 
   .twitter-button::after {
-      content: '\f35a'; /* You should use \ and not /*/
+    content: "\f35a"; /* You should use \ and not /*/
     font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
     font-style: normal;
     font-weight: normal;
     color: #4f1a6f;
-   
   }
   .button-red {
     background: #ff3b30;
@@ -159,7 +158,7 @@
       &__menu-options {
         &__option {
           &__link {
-              font-size: 1.2rem;
+            font-size: 1.2rem;
             &__icon {
               svg {
                 margin-top: -4px;
@@ -170,8 +169,6 @@
       }
     }
   }
-
-
 
   .custom-section-content {
     width: 100%;
@@ -190,13 +187,11 @@
   }
 }
 
-
-@media (min-width: 1500px){
+@media (min-width: 1500px) {
   .nav-container {
     max-width: 80% !important;
   }
 }
-
 </style>
 <script>
 import VueNavigationBar from "vue-navigation-bar";
@@ -210,7 +205,7 @@ export default {
         elementId: "main-navbar",
         isUsingVueRouter: true,
         mobileBreakpoint: 992,
-        brandImagePath: "./",
+        brandImagePath: "/",
         brandImage: require("@/assets/logo.png"),
         brandImageAltText: "brand-image",
         collapseButtonImageOpen: require("vue-navigation-bar/src/assets/images/collapse-menu-dark.png"),
@@ -222,12 +217,12 @@ export default {
           {
             type: "link",
             text: "Work",
-            path: "./work"
+            path: "/work"
           },
           {
             type: "link",
             text: "About",
-            path: "./about"
+            path: "/about"
           },
           {
             type: "link",
@@ -239,7 +234,7 @@ export default {
                 path: "./customer-service",
                 iconLeft: '<i class="fa fa-user fa-fw"></i>'
               },
-               {
+              {
                 type: "hr"
               },
               {
@@ -248,7 +243,7 @@ export default {
                 path: "./accounting",
                 iconLeft: '<i class="fa fa-star fa-fw"></i>'
               },
-             
+
               {
                 type: "link",
                 text: "Web Design and Development",

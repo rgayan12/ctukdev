@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-12 col-lg-12 col-xl-6">
               <div class="padding-md-30px">
-              <h1 v-html="item.message"></h1>
+                <h1 v-html="item.message"></h1>
               </div>
             </div>
           </div>
@@ -125,16 +125,14 @@
 }
 
 @media (max-width: 1200px) {
-  .padding-md-30px{
+  .padding-md-30px {
     padding: 30px;
   }
 }
 
-
-@media(min-width: 768px){
+@media (min-width: 768px) {
   .agile {
-  
-      h1 {
+    h1 {
       font-size: 3rem;
       text-transform: uppercase;
       line-height: 1;
@@ -142,17 +140,14 @@
     .spotlight-text {
       font-size: 6rem;
     }
+  }
 }
 
+@media (min-width: 1024px) {
+  .img-div img {
+    margin-top: 0;
+  }
 }
-
-@media(min-width: 1024px){
-.img-div img{
-  margin-top: 0;
-}
-}
-
-
 </style>
 
 <script>
@@ -167,12 +162,12 @@ export default {
   data() {
     return {
       mainslides: [],
-      	options1: {
-				dots: true,
-				fade: true,
-				navButtons: false,
-        slidesToShow: 1,
-			},
+      options1: {
+        dots: true,
+        fade: true,
+        navButtons: false,
+        slidesToShow: 1
+      }
     };
   },
   created() {

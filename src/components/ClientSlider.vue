@@ -2,7 +2,7 @@
   <div>
     <agile v-if="mainslides.length" :nav-buttons="false" :options="options1">
       <div v-for="item in mainslides" v-bind:key="item.id">
-        <div class="slide green" :class="green">
+        <div class="slide" :style="'background-color:' + item.headingcolor">
           <div class="row">
             <div class="col-md-12 col-lg-12 col-xl-6 img-div">
               <img
@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-12 col-lg-12 col-xl-6">
               <div class="padding-md-30px">
-              <h1 v-html="item.client_name"></h1>
+                <h1 v-html="item.client_name"></h1>
               </div>
             </div>
           </div>
@@ -71,14 +71,6 @@
     font-weight: 300;
   }
 }
-
-.slide-1 {
-  background-color: #84ab98;
-}
-.slide-2 {
-  background-color: #f1c40f;
-}
-
 .agile {
   margin-top: -180px;
   z-index: 2;
@@ -111,30 +103,16 @@
   margin-top: 20%;
 }
 
-.green {
-  background-color: #84ab98;
-}
-.purple {
-  background-color: #6c2482;
-}
-.light-yellow {
-  background-color: #c4a96c;
-}
-.orange {
-  background-color: #ee7800;
-}
 
 @media (max-width: 1200px) {
-  .padding-md-30px{
+  .padding-md-30px {
     padding: 30px;
   }
 }
 
-
-@media(min-width: 768px){
+@media (min-width: 768px) {
   .agile {
-  
-      h1 {
+    h1 {
       font-size: 3rem;
       text-transform: uppercase;
       line-height: 1;
@@ -142,45 +120,41 @@
     .spotlight-text {
       font-size: 6rem;
     }
+  }
 }
 
+@media (min-width: 1024px) {
+  .img-div img {
+    margin-top: 0;
+  }
 }
-
-@media(min-width: 1024px){
-.img-div img{
-  margin-top: 0;
-}
-}
-
-
 </style>
 
 <script>
 import { VueAgile } from "vue-agile";
- 
 
 export default {
   name: "client-slider",
   components: {
     agile: VueAgile
   },
-  props:{
-     slug: String,
-     slides: Array
+  props: {
+    slug: String,
+    slides: Array
   },
   data() {
     return {
       mainslides: [],
-      	options1: {
-				dots: true,
-				fade: true,
-				navButtons: false,
-        slidesToShow: 1,
-			},
+      options1: {
+        dots: true,
+        fade: true,
+        navButtons: false,
+        slidesToShow: 1
+      }
     };
   },
   created() {
     this.mainslides = this.slides;
-  },
+  }
 };
 </script>

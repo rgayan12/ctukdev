@@ -13,13 +13,12 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    meta: {  title: 'About Page - Example App' },
+    meta: { title: "About Page - Example App" },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
-     
+      import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
     path: "/work",
@@ -37,22 +36,32 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "ClientDetails" */ "../views/ClientDetails.vue")
+      import(
+        /* webpackChunkName: "ClientDetails" */ "../views/ClientDetails.vue"
+      )
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: () =>
+      import(
+        /* webpackChunkName: "ClientDetails" */ "../views/Contact.vue"
+      )
   }
 
 ];
 
 const router = new VueRouter({
   routes,
-  scrollBehavior () {
-  return { x: 0, y: 0 }
-}
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title ?? 'Consider This'
+  document.title = to.meta.title ?? "Consider This";
 
-  next()
+  next();
 });
 
 export default router;

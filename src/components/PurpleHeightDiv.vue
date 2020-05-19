@@ -4,12 +4,12 @@
       <div class="container">
         <div class="div-text">
           <div class="row">
-           <!-- <div class="col-md-6">
+             <div class="col-md-6">
               <h2>Take Your First Step</h2>
             </div>
-            -->
-            <div class="col-md-12">
-              <contactusbutton></contactusbutton>  
+            
+            <div class="col-md-6">
+              <router-link to="/contact" class="btn">Schedule a call</router-link>
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@
 
 .row {
   display: flex;
- 
+
   justify-content: center;
 }
 
@@ -76,14 +76,11 @@
 }
 </style>
 <script>
-import contactusbutton from "@/components/ContactUsButton.vue";
 
 export default {
   name: "FullHeightDiv",
 
   components: {
-    contactusbutton
   }
-  
 };
 </script>
