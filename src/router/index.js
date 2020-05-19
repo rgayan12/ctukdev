@@ -48,7 +48,6 @@ const routes = [
         /* webpackChunkName: "ClientDetails" */ "../views/Contact.vue"
       )
   }
-
 ];
 
 const router = new VueRouter({

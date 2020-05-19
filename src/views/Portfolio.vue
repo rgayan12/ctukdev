@@ -62,9 +62,31 @@
     filter: brightness(0.5);
   }
 }
+<<<<<<< HEAD
 .dark-top {
   background-color: #4a4a4a;
   height: 150px;
+=======
+
+.dark-top {
+  background-color: #4a4a4a;
+  height: 150px;
+
+  .vnb-image {
+    width: 80% !important;
+  }
+
+  .vnb {
+    //padding-top: 25px !important;
+  }
+
+  .vnb__menu-options--right {
+    padding-top: 40px;
+    .vnb__menu-options__option__link {
+      font-size: 1.2em;
+    }
+  }
+>>>>>>> 8719425f16c9a7efb983f6f5ca89e9f8b883255c
 }
 </style>
 <script>
@@ -87,7 +109,11 @@ export default {
     fetchWork() {
       this.$http
         .get(
+<<<<<<< HEAD
           "http://twinkle.consider-this.co.uk/ctuk-backend/items/projects?fields=featured_image.filename_disk,client_name,job_type,description,slug,featured_image.title&filter[status]=published"
+=======
+          "http://twinkle.consider-this.co.uk/ctuk-backend/items/projects?fields=featured_image.filename_disk,client_name,job_type,description,featured_image.title&filter[status]=published"
+>>>>>>> 8719425f16c9a7efb983f6f5ca89e9f8b883255c
         )
         .then(response => {
           this.ourwork = response.data.data;
