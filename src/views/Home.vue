@@ -14,7 +14,7 @@
     ></FullHeightDiv>
 
     <Testimonials></Testimonials>
-
+    <awards></awards>
     <PurpleDiv></PurpleDiv>
   </div>
 </template>
@@ -28,6 +28,7 @@ import FullHeightDiv from "@/components/FullHeightDiv.vue";
 import Testimonials from "@/components/Testimonials.vue";
 import PurpleDiv from "@/components/PurpleHeightDiv.vue";
 import whiteNavBar from "@/components/WhiteNavBar.vue";
+import awards from "@/components/Awards.vue";
 
 export default {
   name: "Home",
@@ -38,7 +39,8 @@ export default {
     FullHeightDiv,
     Testimonials,
     PurpleDiv,
-    whiteNavBar
+    whiteNavBar,
+    awards
   },
   data() {
     return {

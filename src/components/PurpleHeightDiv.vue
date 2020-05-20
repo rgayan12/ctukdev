@@ -3,7 +3,7 @@
     <div class="purple-height overlay grey">
       <div class="container">
         <div class="div-text">
-          <div class="row">
+          <div class="row center-row">
              <div class="col-md-6">
               <h2>Take Your First Step</h2>
             </div>
@@ -24,15 +24,7 @@
   padding: 50px;
 }
 
-.row {
-  display: flex;
 
-  justify-content: center;
-}
-
-.text-center {
-  text-align: center;
-}
 
 .div-text {
   position: relative;

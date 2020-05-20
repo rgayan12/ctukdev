@@ -11,7 +11,7 @@
                         <div class="row">
                             
                             <div class="col-md-12">
-                                <h3>What's your name?</h3>
+                                <p>What's your name?</p>
                                 <div class="row">
                                     <div class="col-md-6"><input type="text" placeholder="First Name" /></div>
                                     <div class="col-md-6"><input type="text" placeholder="Last Name" /></div>
@@ -19,19 +19,19 @@
                             </div>
                             
                             <div class="col-md-12">
-                                <h3>What's your email?</h3>
+                                <p>What's your email?</p>
                                 <input type="text" placeholder="example@email.com" />
                             </div>    
                             <div class="col-md-12">
-                                <h3>What's your phone number?</h3>
+                                <p>What's your phone number?</p>
                                 <input type="text" placeholder="07000 00000" />
                             </div>   
                               <div class="col-md-12">
-                                <h3>What's your message?</h3>
+                                <p>What's your message?</p>
                                 <textarea placeholder="Write us a message"></textarea>
                             </div>   
-                             <div class="col-md-12 text-center">
-                                <button>Send Message</button>
+                             <div class="col-md-12 text-center margin-top-bottom-30px">
+                                <button class="button "><span>Send Message</span></button>
                             </div>   
                         </div>
                    </div>
@@ -52,6 +52,63 @@
   background-color: #4a4a4a;
   height: 150px;
 }
+
+input, textarea{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-sizing: border-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   
+}
+
+
+.button {
+  border-radius: 4px;
+  background-color: #6c2482;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 40px 20px 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
 
 </style>
 <script>

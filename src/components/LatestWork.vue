@@ -37,7 +37,7 @@
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <div class="container">
-      <router-link to="./about"><h3>See more of our work >>></h3></router-link>
+      <router-link to="/work"><h3>See more of our work >>></h3></router-link>
     </div>
   </div>
 </template>
@@ -57,6 +57,7 @@
   max-width: 400px; /*actual image width*/
   height: auto; /* maintain aspect ratio*/
   margin: auto; /*optional centering of image*/
+  max-height: 350px;
 }
 
 .swiper-wrapper {

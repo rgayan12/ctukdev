@@ -39,7 +39,7 @@
                     {{ item.hobby }} <span>Hobby</span>
                   </div>
                   <div class="col-md-2 text-center right-ctuk-border animal">
-                    {{ item.animal }} <span>Animal</span>
+                    {{ item.animal }} <span style="display:block;">Animal</span>
                   </div>
                   <div class="col-md-2 text-center right-ctuk-border drink">
                     {{ item.drink }} <span>Drink</span>

@@ -3,7 +3,7 @@
     <agile v-if="mainslides.length" :nav-buttons="false" :options="options1">
       <div v-for="item in mainslides" v-bind:key="item.id">
         <div class="slide" :class="item.background_colour">
-          <div class="row">
+          <div class="row center-row">
             <div class="col-md-12 col-lg-12 col-xl-6 img-div">
               <img
                 :src="
@@ -97,7 +97,7 @@
   }
 }
 
-.row {
+.center-row{
   display: flex;
   align-items: center;
   justify-content: center;

@@ -19,6 +19,8 @@
 
     <Footer-component></Footer-component>
     <SocialFooter></SocialFooter>
+    <back-to-top text="Back to top"></back-to-top>
+
   </div>
 </template>
 
