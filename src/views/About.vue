@@ -3,68 +3,152 @@
     <whiteNavBar></whiteNavBar>
 
     <div class="full-height overlay grey">
-      <div class="container">
+      <div class="container d-flex justify-content-center">
         <div class="div-text">
-          <h1>About Us</h1>
           <h4 v-html="page.content"></h4>
-
-          <div class="right-text" v-if="link == true">
-            <a href="#">Learn more about us</a>
-          </div>
         </div>
       </div>
     </div>
 
+    <section>
+      <div class="container" style="margin-top:30px">
+        <div class="row" v-html="page.body">
+
+        </div>
+      </div>
+    </section>
+
     <section class="team-section">
+        <h2 class="text-center large-text">Meet the Team</h2>
       <div class="container" v-if="team.length">
         <div class="row">
           <div
-            class="col-md-12 border-1 margin-bottom-20px"
+            class="col-md-6 border-0 margin-bottom-20px"
             v-for="item in team"
             :key="item.id"
           >
-            <div class="row">
-              <div class="col-md-4 text-center name-block">
-                <h1 class="first-letter-large">{{ item.name.charAt(0) }}</h1>
-                <h2>{{ item.name }}</h2>
-                <h4>{{ item.title }}</h4>
-              </div>
 
-              <div class="col-md-8">
-                <div class="row col-md-12">
+          <div class="card-container">
+          <div class="card-flip">
+
+              <div class="card front">
+                  <div class="row">
+                  <div class="col-md-4 text-center name-block">
+                  <h1 class="first-letter-large">{{ item.name.charAt(0) }}</h1>
+                  <h2>{{ item.name }}</h2>
+                  <h4>{{ item.title }}</h4>
+                  </div>
+
+                  <div class="col-md-8">
+                  <div class="row col-md-12">
                   <p>{{ item.bio }}</p>
-                </div>
-                <div class="row text-center-bottom stats">
-                  <div class="col-md-2 text-center right-ctuk-border hobby">
-                    {{ item.hobby }} <span>Hobby</span>
                   </div>
-                  <div class="col-md-2 text-center right-ctuk-border animal">
-                    {{ item.animal }} <span style="display:block;">Animal</span>
                   </div>
-                  <div class="col-md-2 text-center right-ctuk-border drink">
-                    {{ item.drink }} <span>Drink</span>
                   </div>
-                  <div class="col-md-2 text-center right-ctuk-border symbol">
-                    <span v-html="item.symbol"></span> <br />
-                    <span>Symbol</span>
+              </div>
+              <div class="card back">
+        
+                  <div class="row h-100">
+                  <div class="col-md-12 d-block d-md-none text-center">
+                    <h3><u>{{ firstName(item.name) }}'s</u></h3>
                   </div>
-                  <div class="col-md-2 text-center right-ctuk-border colour">
-                    <div
+                  </div>
+                  <div class="row d-flex">
+
+              
+                      <div class="col-md-6 text-center  animal">
+                          <p style="line-height:1;"><b> Fav Animal</b> </p>
+                          <p style="line-height:1;">{{ item.animal }}</p>
+                      </div>
+
+                      <div class="col-md-6 text-center drink">
+                        <p style="line-height:1;"><b> Drink </b></p>
+                        <p style="line-height:1;">{{ item.drink }}</p>
+                      </div>
+
+                      <div class="col-md-12 d-none d-md-block text-center">
+                             <h2 class="p-0 m-0" :style="'color:' + item.colour"><u>{{ firstName(item.name) }}'s</u></h2>
+                      </div>
+
+                      <div class="col-md-6 text-center symbol">
+                        <p style="line-height:1;"><b> Symbol </b></p>
+                        <p style="line-height:1;">{{ item.symbol }}</p>
+                      </div>
+
+                      <div class="col-md-6 text-center colour">
+                           <p style="line-height:1;"><b> Colour </b></p>
+                         <div
                       class="colour-ball"
                       :style="'background-color:' + item.colour"
-                    ></div>
-                    <span> {{ item.colour }} </span>
+                      ></div>
+                      <small> {{ item.colour }} </small>
+                      </div>
                   </div>
-                </div>
+                        <div class="row d-flex">
+                              <div class="col-md-12 text-center hobby">
+                            <p style="line-height:1;"><b>Hobby</b></p>
+                            <p style="line-height:1;">{{ item.hobby }}</p> 
+                            
+                      </div>
+
+                  </div>
+                  
+
               </div>
-            </div>
+          </div>
+          </div>
+          
+
+
+
+
           </div>
         </div>
       </div>
+
     </section>
   </div>
 </template>
 <style lang="scss" scoped>
+
+
+.card-container {
+    display: grid;
+    perspective: 700px;
+}
+
+.card-flip {
+    display: grid; grid-template: 1fr / 1fr;
+    grid-template-areas: "frontAndBack";
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
+}
+
+.card-flip, .card-container {
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
+}
+
+.card-flip div {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.front {
+    grid-area: frontAndBack;
+}
+
+.back {
+    grid-area: frontAndBack;
+    transform: rotateY(-180deg);
+}
+
+.card-container:hover .card-flip {
+    transform: rotateY(180deg);
+}
+
+
+
 @media (max-width: 786px) {
   .full-height {
     height: 100% !important;
@@ -72,13 +156,17 @@
 }
 
 .full-height {
+
   margin-top: -180px;
-  height: 100vh;
+//  height: 100vh;
   background: url("/images/about.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px;
 }
+
+
+
 .div-text {
   position: relative;
   margin-top: 150px;
@@ -92,8 +180,7 @@
     font-size: 1.9rem;
     border-bottom: 2px solid #fff;
   }
-  p,
-  h4 {
+  p, h4 {
     color: #fff;
     font-size: 1.3em;
   }
@@ -108,8 +195,14 @@
 
 @media (min-width: 1200px) {
   .div-text {
-    width: 60%;
+    text-align: center;
+    width: 70%;
+ }
+
+  .large-text{
+    font-size: 3rem;
   }
+
 }
 .overlay {
   position: relative;
@@ -190,6 +283,7 @@
   margin-bottom: 5px;
 }
 </style>
+
 <script>
 import whiteNavBar from "@/components/WhiteNavBar.vue";
 
@@ -231,6 +325,9 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+    },
+    firstName(fist_name) {
+        return fist_name.split(" ")[0];
     }
   }
 };

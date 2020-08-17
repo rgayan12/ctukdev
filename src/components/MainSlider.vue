@@ -166,7 +166,10 @@ export default {
         dots: true,
         fade: true,
         navButtons: false,
-        slidesToShow: 1
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        changeDelay: 6000
       }
     };
   },

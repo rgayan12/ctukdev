@@ -5,13 +5,35 @@
 
     <div class="container portfolio-text-container">
       <div class="row">
-        <div class="col-md-12">
-          <p v-html="mainslides[0].description"></p>
+        <div class="col-md-12" v-if="mainslides[0].case_study">
+          <p v-html="mainslides[0].case_study"></p>
         </div>
       </div>
     </div>
 
+
+
+        <div class="container ">
+            <h1>{{mainslides[0].title}}</h1>
+
+            <h3>Client Name: {{mainslides[0].client_name}}</h3>
+
+       
+
+            <div v-for="item in mainslides[0].images" v-bind:key="item.id">
+                <img
+                  :src="
+                    'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
+                      item.directus_files_id.filename_disk
+                  "
+                  class="client-image"
+                />
+            </div>
+
+     
+         </div>
     <PurpleHeightDiv></PurpleHeightDiv>
+
   </div>
 </template>
 <style>
@@ -48,7 +70,7 @@ export default {
     fetchSlides() {
       axios
         .get(
-          `http://twinkle.consider-this.co.uk/ctuk-backend/items/projects?fields=featured_image.filename_disk,client_name,headingcolor,job_type,description,featured_image.title&filter[slug]=${this.clientId}`
+          `http://twinkle.consider-this.co.uk/ctuk-backend/items/case_studies?fields=title,client_name,case_study,slug,images.directus_files_id.filename_disk,featured_image.filename_disk,client_name,headingcolor,title,case_study,featured_image.title&filter[slug]=${this.clientId}`
         )
         .then(response => {
           this.mainslides = response.data.data;
