@@ -11,36 +11,28 @@
       </div>
     </div>
 
+    <div class="container ">
+      <h1>{{ mainslides[0].title }}</h1>
 
+      <h3>Client Name: {{ mainslides[0].client_name }}</h3>
 
-        <div class="container ">
-            <h1>{{mainslides[0].title}}</h1>
-
-            <h3>Client Name: {{mainslides[0].client_name}}</h3>
-
-       
-
-            <div v-for="item in mainslides[0].images" v-bind:key="item.id">
-                <img
-                  :src="
-                    'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
-                      item.directus_files_id.filename_disk
-                  "
-                  class="client-image"
-                />
-            </div>
-
-     
-         </div>
+      <div v-for="item in mainslides[0].images" v-bind:key="item.id">
+        <img
+          :src="
+            'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
+              item.directus_files_id.filename_disk
+          "
+          class="client-image"
+        />
+      </div>
+    </div>
     <PurpleHeightDiv></PurpleHeightDiv>
-
   </div>
 </template>
-<style>
-.portfolio-text-container{
+<style scoped>
+.portfolio-text-container {
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 </style>
 <script>
@@ -55,7 +47,6 @@ export default {
     whiteNavBar,
     MainSlider,
     PurpleHeightDiv
-
   },
   data() {
     return {

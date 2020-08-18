@@ -4,12 +4,14 @@
       <div class="container">
         <div class="div-text">
           <div class="row center-row">
-             <div class="col-md-6">
+            <div class="col-md-6">
               <h2>Take Your First Step</h2>
             </div>
-            
+
             <div class="col-md-6">
-              <router-link to="/contact" class="btn">Schedule a call</router-link>
+              <router-link to="/contact" class="btn"
+                >Schedule a call</router-link
+              >
             </div>
           </div>
         </div>
@@ -23,8 +25,6 @@
   background: #6c2482;
   padding: 50px;
 }
-
-
 
 .div-text {
   position: relative;
@@ -68,11 +68,9 @@
 }
 </style>
 <script>
-
 export default {
   name: "FullHeightDiv",
 
-  components: {
-  }
+  components: {}
 };
 </script>

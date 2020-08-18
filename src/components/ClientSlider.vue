@@ -89,7 +89,7 @@
   }
 }
 
-.client-slider-raw{
+.client-slider-raw {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +102,6 @@
   margin: auto; /*optional centering of image*/
   margin-top: 20%;
 }
-
 
 @media (max-width: 1200px) {
   .padding-md-30px {

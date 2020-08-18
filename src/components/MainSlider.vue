@@ -97,7 +97,7 @@
   }
 }
 
-.center-row{
+.center-row {
   display: flex;
   align-items: center;
   justify-content: center;

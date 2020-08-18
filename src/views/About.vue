@@ -12,14 +12,12 @@
 
     <section>
       <div class="container" style="margin-top:30px">
-        <div class="row" v-html="page.body">
-
-        </div>
+        <div class="row" v-html="page.body"></div>
       </div>
     </section>
 
     <section class="team-section">
-        <h2 class="text-center large-text">Meet the Team</h2>
+      <h2 class="text-center large-text">Meet the Team</h2>
       <div class="container" v-if="team.length">
         <div class="row">
           <div
@@ -27,127 +25,120 @@
             v-for="item in team"
             :key="item.id"
           >
-
-          <div class="card-container">
-          <div class="card-flip">
-
-              <div class="card front">
+            <div class="card-container h-100">
+              <div class="card-flip left-ctuk-border">
+                <div class="card front">
                   <div class="row">
-                  <div class="col-md-4 text-center name-block">
-                  <h1 class="first-letter-large">{{ item.name.charAt(0) }}</h1>
-                  <h2>{{ item.name }}</h2>
-                  <h4>{{ item.title }}</h4>
-                  </div>
+                    <div class="col-md-4 text-center name-block">
+                      <h1 class="first-letter-large">
+                        {{ item.name.charAt(0) }}
+                      </h1>
+                      <h2>{{ item.name }}</h2>
+                      <h4>{{ item.title }}</h4>
+                    </div>
 
-                  <div class="col-md-8">
-                  <div class="row col-md-12">
-                  <p>{{ item.bio }}</p>
+                    <div class="col-md-8">
+                      <div class="row col-md-12">
+                        <p>{{ item.bio }}</p>
+                      </div>
+                    </div>
                   </div>
-                  </div>
-                  </div>
-              </div>
-              <div class="card back">
-        
-                  <div class="row h-100">
-                  <div class="col-md-12 d-block d-md-none text-center">
-                    <h3><u>{{ firstName(item.name) }}'s</u></h3>
-                  </div>
+                </div>
+                <div class="card back">
+                  <div class="row">
+                    <div class="col-md-12 d-block d-md-none text-center">
+                      <h3>
+                        <u>{{ firstName(item.name) }}'s</u>
+                      </h3>
+                    </div>
                   </div>
                   <div class="row d-flex">
+                    <div class="col-md-6 text-center  animal">
+                      <p style="line-height:1;"><b> Fav Animal</b></p>
+                      <p style="line-height:1;">{{ item.animal }}</p>
+                    </div>
 
-              
-                      <div class="col-md-6 text-center  animal">
-                          <p style="line-height:1;"><b> Fav Animal</b> </p>
-                          <p style="line-height:1;">{{ item.animal }}</p>
-                      </div>
+                    <div class="col-md-6 text-center drink">
+                      <p style="line-height:1;"><b> Drink </b></p>
+                      <p style="line-height:1;">{{ item.drink }}</p>
+                    </div>
 
-                      <div class="col-md-6 text-center drink">
-                        <p style="line-height:1;"><b> Drink </b></p>
-                        <p style="line-height:1;">{{ item.drink }}</p>
-                      </div>
+                    <div class="col-md-12 d-none d-md-block text-center">
+                      <h2 class="p-0 m-0" :style="'color:' + item.colour">
+                        <u>{{ firstName(item.name) }}'s</u>
+                      </h2>
+                    </div>
 
-                      <div class="col-md-12 d-none d-md-block text-center">
-                             <h2 class="p-0 m-0" :style="'color:' + item.colour"><u>{{ firstName(item.name) }}'s</u></h2>
-                      </div>
+                    <div class="col-md-6 text-center symbol">
+                      <p style="line-height:1;"><b> Symbol </b></p>
+                      <p style="line-height:1;">{{ item.symbol }}</p>
+                    </div>
 
-                      <div class="col-md-6 text-center symbol">
-                        <p style="line-height:1;"><b> Symbol </b></p>
-                        <p style="line-height:1;">{{ item.symbol }}</p>
-                      </div>
-
-                      <div class="col-md-6 text-center colour">
-                           <p style="line-height:1;"><b> Colour </b></p>
-                         <div
-                      class="colour-ball"
-                      :style="'background-color:' + item.colour"
+                    <div class="col-md-6 text-center colour">
+                      <p style="line-height:1;"><b> Colour </b></p>
+                      <div
+                        class="colour-ball"
+                        :style="'background-color:' + item.colour"
                       ></div>
                       <small> {{ item.colour }} </small>
-                      </div>
+                    </div>
                   </div>
-                        <div class="row d-flex">
-                              <div class="col-md-12 text-center hobby">
-                            <p style="line-height:1;"><b>Hobby</b></p>
-                            <p style="line-height:1;">{{ item.hobby }}</p> 
-                            
-                      </div>
-
+                  <div class="row d-flex">
+                    <div class="col-md-12 text-center hobby">
+                      <p style="line-height:1;"><b>Hobby</b></p>
+                      <p style="line-height:1;">{{ item.hobby }}</p>
+                    </div>
                   </div>
-                  
-
+                </div>
               </div>
-          </div>
-          </div>
-          
-
-
-
-
+            </div>
           </div>
         </div>
       </div>
-
     </section>
   </div>
 </template>
 <style lang="scss" scoped>
-
-
 .card-container {
-    display: grid;
-    perspective: 700px;
+  display: grid;
+  perspective: 700px;
 }
 
 .card-flip {
-    display: grid; grid-template: 1fr / 1fr;
-    grid-template-areas: "frontAndBack";
-    transform-style: preserve-3d;
-    transition: all 0.7s ease;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  grid-template-areas: "frontAndBack";
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
 }
 
-.card-flip, .card-container {
-    transform-style: preserve-3d;
-    transition: all 0.7s ease;
+.card-flip,
+.card-container {
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
 }
 
 .card-flip div {
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .front {
-    grid-area: frontAndBack;
+  grid-area: frontAndBack;
 }
 
 .back {
-    grid-area: frontAndBack;
-    transform: rotateY(-180deg);
+  grid-area: frontAndBack;
+  transform: rotateY(-180deg);
 }
 
 .card-container:hover .card-flip {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-
+.h-100 {
+  height: 100%;
+}
 
 @media (max-width: 786px) {
   .full-height {
@@ -156,16 +147,13 @@
 }
 
 .full-height {
-
   margin-top: -180px;
-//  height: 100vh;
+  //  height: 100vh;
   background: url("/images/about.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px;
 }
-
-
 
 .div-text {
   position: relative;
@@ -180,7 +168,8 @@
     font-size: 1.9rem;
     border-bottom: 2px solid #fff;
   }
-  p, h4 {
+  p,
+  h4 {
     color: #fff;
     font-size: 1.3em;
   }
@@ -197,12 +186,11 @@
   .div-text {
     text-align: center;
     width: 70%;
- }
-
-  .large-text{
-    font-size: 3rem;
   }
 
+  .large-text {
+    font-size: 3rem;
+  }
 }
 .overlay {
   position: relative;
@@ -260,10 +248,8 @@
   color: #6c2482;
 }
 
-.right-ctuk-border {
-  border-right: 5px solid #6c2482;
-  height: 4rem;
-  line-height: 2rem;
+.left-ctuk-border {
+  border-left: 5px solid #6c2482;
 }
 
 .stats {
@@ -327,7 +313,7 @@ export default {
         });
     },
     firstName(fist_name) {
-        return fist_name.split(" ")[0];
+      return fist_name.split(" ")[0];
     }
   }
 };

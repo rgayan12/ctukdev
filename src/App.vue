@@ -20,7 +20,6 @@
     <Footer-component></Footer-component>
     <SocialFooter></SocialFooter>
     <back-to-top text="Back to top"></back-to-top>
-
   </div>
 </template>
 
@@ -61,15 +60,14 @@ body {
   opacity: 0;
 }
 
-.text-white{
+.text-white {
   color: #fff;
 }
 
-.margin-top-bottom-30px{
+.margin-top-bottom-30px {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 </style>
 
 <script>

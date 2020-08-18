@@ -9,86 +9,85 @@
         <div class="about">
           <h1 class="text-center font-weight-bold large-text">Our Work</h1>
           <div class="row">
-            <div v-for="item in ourwork" v-bind:key="item.id" class="col-md-4 col-xl-4 client-column">
+            <div
+              v-for="item in ourwork"
+              v-bind:key="item.id"
+              class="col-md-4 col-xl-4 client-column"
+            >
               <div class="client-details" v-if="item.featured_image">
-
                 <img
                   :src="
                     'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
                       item.featured_image.filename_disk
                   "
                   class="client-image"
-
                 />
                 <div class="overlay">
-                <div class="client-name">
-                  <router-link
-                    :to="{ name: 'ClientDetails', params: { id: item.slug } }" class="text-white"
-                  >
-                    {{ item.client_name }}</router-link
-                  >
-                </div>
+                  <div class="client-name">
+                    <router-link
+                      :to="{ name: 'ClientDetails', params: { id: item.slug } }"
+                      class="text-white"
+                    >
+                      {{ item.client_name }}</router-link
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <casestudies></casestudies>
     </section>
   </div>
 </template>
-<style lang="scss">
-
-
+<style lang="scss" scoped>
 .info-section {
   margin-top: 2%;
 
-  .large-text{
-     font-size: 3rem;
+  .large-text {
+    font-size: 3rem;
   }
 }
 
 .client-image {
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 5px;
+  border-radius: 1px;
   width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
   height: 400px;
   object-fit: cover;
 }
-.client-column{
+.client-column {
   padding: 2px;
- 
 }
 .client-details {
   position: relative;
-  
-  .client-name {
-     color: white;
-      font-size: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center;
-  }
+  height: 400px;
 
+  .client-name {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
-.client-details:hover{
+.client-details:hover {
   .client-image {
     filter: brightness(0.5);
   }
 
   .overlay {
-  opacity: 1;
-}
+    opacity: 1;
+  }
 }
 
- .dark-top {
+.dark-top {
   background-color: #4a4a4a;
   height: 150px;
 }
@@ -102,21 +101,17 @@
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
   background-color: #6c2482;
 }
-
-
 </style>
 <script>
 import whiteNavBar from "@/components/WhiteNavBar.vue";
-import casestudies from "@/components/CaseStudies.vue";
 
 export default {
   name: "portfolio",
   components: {
-    whiteNavBar,
-    casestudies
+    whiteNavBar
   },
   data() {
     return {

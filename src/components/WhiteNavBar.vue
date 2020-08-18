@@ -1,31 +1,7 @@
 <template>
   <section class="main-navbar-section">
     <div class="container nav-container">
-      <vue-navigation-bar :options="navbarOptions">
-        <!-- Custom Slot - Uncomment to use -->
-        <!-- <template v-slot:custom-section>
-            <div class="custom-section-content">
-              <div class="input-group input-group-sm">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder
-                  aria-label="Example text with button addon"
-                  aria-describedby="button-addon1"
-                />
-                <div class="input-group-append">
-                  <button
-                    class="btn btn-primary"
-                    type="button"
-                    id="button-addon1"
-                  >
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </template> -->
-      </vue-navigation-bar>
+      <vue-navigation-bar :options="navbarOptions"> </vue-navigation-bar>
     </div>
   </section>
 </template>
@@ -208,8 +184,8 @@ export default {
         brandImagePath: "/",
         brandImage: require("@/assets/logo.png"),
         brandImageAltText: "brand-image",
-        collapseButtonImageOpen: require("vue-navigation-bar/src/assets/images/collapse-menu-dark.png"),
-        collapseButtonImageClose: require("vue-navigation-bar/src/assets/images/times.png"),
+        collapseButtonOpenColor: "#661c23",
+        collapseButtonCloseColor: "#661c23",
         showBrandImageInMobilePopup: true,
         ariaLabelMainNav: "Main Navigation",
         tooltipAnimationType: "shift-away",
@@ -222,7 +198,7 @@ export default {
           {
             type: "link",
             text: "About",
-            path: "/about"
+            path: { name: "about" }
           },
           {
             type: "link",
@@ -230,33 +206,39 @@ export default {
             subMenuOptions: [
               {
                 type: "link",
-                text: "Marketing",
-                path: "./customer-service",
-                iconLeft: '<i class="fa fa-user fa-fw"></i>'
+                text: "Digital Marketing",
+                path: { name : "digital-marketing"},
+                iconLeft: '<i class="fas fa-poll"></i>'
               },
-              {
+              /*  {
                 type: "hr"
+              }, */
+              {
+                type: "link",
+                text: "Print",
+                path: { name : "print"},
+                iconLeft: '<i class="fas fa-paint-roller"></i>'
+              },
+              { 
+                type: "link",
+                text: "Design & Creative",
+                path: { name : "design"},
+                iconLeft: '<i class="fas fa-tape"></i>'
               },
               {
                 type: "link",
-                text: "Print and Creative",
-                path: "./accounting",
-                iconLeft: '<i class="fa fa-star fa-fw"></i>'
-              },
-
-              {
-                type: "link",
-                text: "Web Design and Development",
-                path: "./reception",
+                text: "Web",
+                path: { name : "web"},
                 iconLeft:
                   '<svg id="i-telephone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M3 12 C3 5 10 5 16 5 22 5 29 5 29 12 29 20 22 11 22 11 L10 11 C10 11 3 20 3 12 Z M11 14 C11 14 6 19 6 28 L26 28 C26 19 21 14 21 14 L11 14 Z" /> <circle cx="16" cy="21" r="4" /> </svg>'
-              }
+            }
+              
             ]
           },
           {
             type: "link",
             text: "Contact",
-            path: "./contact"
+            path: { name : "Contact"}
           },
           {
             type: "button",

@@ -2,39 +2,28 @@
   <div>
     <div class="container my-5">
       <h2>Our Latest Work</h2>
-   
-    <swiper class="swiper" :options="swiperOption">
-   
-      <swiper-slide v-for="item in ourwork" v-bind:key="item.id">
-<div class=figure>
 
-        <img
-          :src="
-            'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
-              item.featured_image.filename_disk
-          "
-        />
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide v-for="item in ourwork" v-bind:key="item.id">
+          <div class="figure">
+            <img
+              :src="
+                'http://twinkle.consider-this.co.uk/uploads/ctuk-backend/originals/' +
+                  item.featured_image.filename_disk
+              "
+            />
 
+            <h3>{{ item.client_name }}</h3>
+            <h5>{{ item.job_type }}</h5>
+          </div>
+        </swiper-slide>
 
-        
-<h3>{{ item.client_name }}</h3>
-        <h5>{{ item.job_type }}</h5>
-      
+        <div class="swiper-pagination" slot="pagination"></div>
 
-</div>
-      </swiper-slide>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </swiper>
 
-      <div class="swiper-pagination" slot="pagination"></div>
-
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
-
-
-    </swiper>
-
-
-
-  
       <router-link to="/work"><h3>See more of our work >>></h3></router-link>
     </div>
   </div>
@@ -42,26 +31,25 @@
 
 <style lang="scss">
 .swiper-slide {
-   text-align: center;
-      font-size: 18px;
-      background: #fff;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-  
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-.my-5{
+.my-5 {
   margin-top: 120px;
   margin-bottom: 120px;
 }
@@ -82,11 +70,10 @@
   transition-property: transform;
   box-sizing: content-box;
 }
-    .swiper-container {
-      width: 100%;
-      height: 100%;
-    }
-
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
 </style>
 
 <script>
@@ -103,30 +90,30 @@ export default {
   data() {
     return {
       swiperOption: {
-           pagination: {
+        pagination: {
           el: ".swiper-pagination",
           clickable: true
         },
-         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
         },
         breakpoints: {
           1024: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 30
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 30
           },
           640: {
             slidesPerView: 2,
-           spaceBetween: 30,
+            spaceBetween: 30
           },
           320: {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 30
           }
         }
       },
