@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="full-height overlay grey">
-      <div class="container">
+      <div class="container d-flex justify-content-center">
         <div class="div-text">
           <h2>{{ title }}</h2>
           <p>{{ summary }}</p>
@@ -23,12 +23,13 @@
 
 .full-height {
   height: 80vh;
-  background: url("/images/greybackground.png");
-  padding: 50px;
+  background: url("/images/tobias-mrzyk-iuqmGmst5Po-unsplash.jpg");
+  background-size: cover;
+  padding: 100px;
 }
 .div-text {
   position: relative;
-  max-width: 500px;
+  max-width: 80%;
   z-index: 100;
   h2 {
     color: #fff;

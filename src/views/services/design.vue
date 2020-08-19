@@ -4,19 +4,23 @@
       <whiteNavBar></whiteNavBar>
     </div>
 
+  <section class="design-section">
+
     <div class="container margin-top-bottom-30px">
       <div class="row">
         <div class="col-md-12">
           <h1>{{ service.name }}</h1>
-
-              <div class="row">
+           <div class="row">
                 <div class="col-md-12">
                   <p>{{ service.intro_text }}</p>
                 </div>
-              </div>
+           </div>
+                          
+                <div class="card" v-for="item in service.secondary_services" v-bind:key="item.id">
 
-              <div class="row" v-for="item in service.secondary_services" v-bind:key="item.id">
+                  <div class="row">
                 <div class="col-md-6">
+                       
                   <h1>{{ item.name }}</h1>
                   <p v-html="item.description"></p>
                 </div>
@@ -27,78 +31,51 @@
                           item.image.filename_disk
                       "
                       alt="header image"
-                      class="img-fluid max-width-60"
+                      class="img-fluid"
               />
                 </div>
-              </div>
-
+                </div>
+              
+        
         </div>
 
       </div>
     </div>
+    </div>
+      </section>
+
 
     <PurpleHeightDiv></PurpleHeightDiv>
   </div>
 </template>
 <style>
+.img-fluid{
+  width: 100%;
+  max-width: 100%;
+}
+
+.design-section{
+ }
+
 .dark-top {
   background-color: #4a4a4a;
   height: 150px;
 }
 
-input,
-textarea {
-  display: block;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  box-sizing: border-box;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+.card{
+   font-size: 16px;
+    line-height: 2em;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    padding-top: 30px!important;
+    padding-right: 20px!important;
+    padding-bottom: 40px!important;
+    padding-left: 20px!important;
+    margin-bottom: 10px!important;
+    box-shadow: 0px 2px 70px 0px rgba(110,130,208,0.18);
 }
 
-.button {
-  border-radius: 4px;
-  background-color: #6c2482;
-  border: none;
-  color: #ffffff;
-  text-align: center;
-  font-size: 20px;
-  padding: 20px 40px 20px 40px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: "\00bb";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 </style>
 <script>
 import whiteNavBar from "@/components/WhiteNavBar.vue";

@@ -3,7 +3,11 @@
     <!--<HelloWorld msg="Welcome to CTUK New Website" /> -->
 
     <whiteNavBar></whiteNavBar>
+
+ 
+
     <MainSlider></MainSlider>
+
 
     <LatestWork></LatestWork>
 
@@ -30,6 +34,8 @@ import PurpleDiv from "@/components/PurpleHeightDiv.vue";
 import whiteNavBar from "@/components/WhiteNavBar.vue";
 import awards from "@/components/Awards.vue";
 
+
+
 export default {
   name: "Home",
   components: {
@@ -40,7 +46,8 @@ export default {
     Testimonials,
     PurpleDiv,
     whiteNavBar,
-    awards
+    awards,
+    
   },
   data() {
     return {

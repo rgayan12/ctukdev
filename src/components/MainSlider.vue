@@ -1,6 +1,11 @@
 <template>
   <div>
     <agile v-if="mainslides.length" :nav-buttons="false" :options="options1">
+   
+      <div class="slide" style="background: url('images/cool-background.svg'); background-repeat:no-repeat; background-size: cover;">
+           <bigc></bigc>
+        </div>
+
       <div v-for="item in mainslides" v-bind:key="item.id">
         <div class="slide" :class="item.background_colour">
           <div class="row center-row">
@@ -22,6 +27,7 @@
           </div>
         </div>
       </div>
+
     </agile>
   </div>
 </template>
@@ -152,12 +158,13 @@
 
 <script>
 import { VueAgile } from "vue-agile";
-import axios from "axios";
+import bigc from "@/components/Animated/Bigc.vue";
 
 export default {
   name: "main-slider",
   components: {
-    agile: VueAgile
+    agile: VueAgile,
+    bigc
   },
   data() {
     return {
@@ -167,7 +174,7 @@ export default {
         fade: true,
         navButtons: false,
         slidesToShow: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         changeDelay: 6000
       }
@@ -178,7 +185,7 @@ export default {
   },
   methods: {
     fetchSlides() {
-      axios
+      this.$http
         .get(
           "http://twinkle.consider-this.co.uk/ctuk-backend/items/headers?fields=main_image.filename_disk,name,message,background_colour,main_image.title&filter[status]=published"
         )

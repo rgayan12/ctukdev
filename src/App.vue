@@ -1,24 +1,13 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-    -->
-
-    <!--
- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    -->
     <transition name="fade" mode="out-in">
-      <router-view />
+          <router-view />
     </transition>
 
     <Footer-component></Footer-component>
+
     <SocialFooter></SocialFooter>
+    
     <back-to-top text="Back to top"></back-to-top>
   </div>
 </template>

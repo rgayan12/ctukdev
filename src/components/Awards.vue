@@ -23,6 +23,10 @@
   </div>
 </template>
 <style lang="scss" scoped>
+
+h2{
+     font-size: 1.9rem;
+}
 .img-fluid {
   max-width: 100%;
 }

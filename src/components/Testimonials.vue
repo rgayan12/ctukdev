@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="testimonials">
+    <div class="testimonials p-80">
       <div class="container">
-        <h2>Testimonials</h2>
+        <h2 class="text-left">Don't just take our word for it</h2>
         <div class="row">
           <div class="col-md-4 col-lg-3">
             <knob-control
@@ -37,6 +37,13 @@
   </div>
 </template>
 <style scoped>
+h2{
+     font-size: 1.9rem;
+}
+.p-80{
+   padding-top: 80px;
+   padding-bottom: 80px;
+}
 .testimonials {
   padding-left: 50px;
 }

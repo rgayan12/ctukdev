@@ -99,6 +99,19 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.card{
+   font-size: 16px;
+    line-height: 2em;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    padding-top: 30px!important;
+    padding-right: 20px!important;
+    padding-bottom: 40px!important;
+    padding-left: 20px!important;
+    margin-bottom: 10px!important;
+    box-shadow: 0px 2px 70px 0px rgba(110,130,208,0.18);
+}
 .card-container {
   display: grid;
   perspective: 700px;
@@ -149,7 +162,7 @@
 .full-height {
   margin-top: -180px;
   //  height: 100vh;
-  background: url("/images/about.png");
+  background: url("/images/tobias-mrzyk-iuqmGmst5Po-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px;
@@ -272,6 +285,8 @@
 
 <script>
 import whiteNavBar from "@/components/WhiteNavBar.vue";
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 export default {
   name: "about",
@@ -283,7 +298,7 @@ export default {
     };
   },
   components: {
-    whiteNavBar
+    whiteNavBar, 
   },
   created() {
     this.fetchPage();
@@ -291,16 +306,20 @@ export default {
   },
   methods: {
     fetchPage() {
+      NProgress.start()
       this.$http
         .get("http://twinkle.consider-this.co.uk/ctuk-backend/items/pages/1")
         .then(response => {
           this.page = response.data.data;
         })
+       
         .catch(function(error) {
           console.log(error);
         });
+           NProgress.done();
     },
     fetchTeam() {
+      NProgress.start()
       this.$http
         .get(
           "http://twinkle.consider-this.co.uk/ctuk-backend/items/team?filter[status]=published"
@@ -311,6 +330,7 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+          NProgress.done();
     },
     firstName(fist_name) {
       return fist_name.split(" ")[0];

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container my-5">
-      <h2>Our Latest Work</h2>
+      <h2><router-link to="/work">Our Latest Work >>></router-link></h2>
 
       <swiper class="swiper" :options="swiperOption">
         <swiper-slide v-for="item in ourwork" v-bind:key="item.id">
@@ -14,22 +14,21 @@
             />
 
             <h3>{{ item.client_name }}</h3>
-            <h5>{{ item.job_type }}</h5>
+           <!-- <h5>{{ item.job_type }}</h5> -->
           </div>
         </swiper-slide>
 
         <div class="swiper-pagination" slot="pagination"></div>
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </swiper>
 
-      <router-link to="/work"><h3>See more of our work >>></h3></router-link>
+     
     </div>
   </div>
 </template>
 
 <style lang="scss">
+ 
 .swiper-slide {
   text-align: center;
   font-size: 18px;

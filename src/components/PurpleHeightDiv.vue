@@ -10,7 +10,7 @@
 
             <div class="col-md-6">
               <router-link to="/contact" class="btn"
-                >Schedule a call</router-link
+                >Get in touch</router-link
               >
             </div>
           </div>
