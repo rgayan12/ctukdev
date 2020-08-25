@@ -7,7 +7,7 @@
           <p>{{ summary }}</p>
 
           <div class="right-text" v-if="link == true">
-            <router-link to="./about">Learn more about us</router-link>
+            <router-link to="./about">Get to know us</router-link>
           </div>
         </div>
       </div>
@@ -15,17 +15,26 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@media (max-width: 786px) {
+
+
+@media (min-width: 786px) {
   .full-height {
-    height: 100% !important;
+     padding: 100px !important;
   }
+
+ .right-text a{
+    font-size: 1.5rem;
+ }
+
 }
 
 .full-height {
   height: 80vh;
   background: url("/images/tobias-mrzyk-iuqmGmst5Po-unsplash.jpg");
   background-size: cover;
-  padding: 100px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
 }
 .div-text {
   position: relative;
@@ -70,6 +79,17 @@
 .grey:after {
   background-color: #2e2e2e;
 }
+
+@media (max-width: 786px) {
+  .full-height {
+    height: 100% !important;
+  }
+
+  .div-text p{
+      font-size: 1rem;
+  }
+}
+
 </style>
 <script>
 export default {

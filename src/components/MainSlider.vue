@@ -2,7 +2,7 @@
   <div>
     <agile v-if="mainslides.length" :nav-buttons="false" :options="options1">
    
-      <div class="slide" style="background: url('images/cool-background.svg'); background-repeat:no-repeat; background-size: cover;">
+      <div class="slide" id="big-c-animation" style="background: url('images/vectorpaint.svg'); background-repeat:no-repeat; background-size: cover;">
            <bigc></bigc>
         </div>
 
@@ -175,8 +175,8 @@ export default {
         navButtons: false,
         slidesToShow: 1,
         autoplay: false,
-        autoplaySpeed: 4000,
-        changeDelay: 6000
+        autoplaySpeed: 7000,
+        changeDelay: 1000
       }
     };
   },

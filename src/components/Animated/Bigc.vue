@@ -39,7 +39,9 @@
                 </div>
                
                 <div class="col-md-12 col-lg-12 col-xl-6 heading-text" ref="headingtext">
-                    <h1><p>Collaborating <span class="spotlight-text">Creatively</span> For 16 years</p></h1>
+                    <div class="padding-md-30px">
+                    <h1>Collaborating <span class="spotlight-text">Creatively</span>For 16 years</h1>
+                    </div>
                 </div>
 
             </div>
@@ -48,20 +50,89 @@
 </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+
    .svgs{
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     margin-top: -10%;
-    width: 440px;
+    width: 240px;
     max-width: 100%;
     overflow: visible;
+
 }
 
-body{
-    font-family: 'Poppins' ;
-}
 .heading-text{
+
+    h1{
+        color: #333;
+        font-size: 2rem;
+    }
+
+   
 }
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+
+     .svgs{
+            width: 140px !important;
+    }    
+    .heading-text{
+        
+        h1{
+            font-size: 2rem;
+        }        
+    } 
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+    .svgs{
+            width: 240px !important;
+    }    
+    .heading-text{
+        
+        h1{
+            font-size: 2rem;
+        }        
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+
+    .svgs{
+            width: 250px !important;
+    }    
+    .heading-text{
+            margin-top: 180px;
+        
+        h1{
+            font-size: 4rem;
+        }        
+    }
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {     
+    
+    .svgs{
+            width: 440px !important;
+    }    
+    .heading-text{
+        margin-top: 0;
+        h1{
+            color: #fff;
+            font-size: 4rem;
+        }        
+    }
+}
+
+
 /*
 .outline{
     opacity: 0;
@@ -82,15 +153,52 @@ export default {
         const { bigc, svgs, headingtext } = this.$refs
 
         const tl = gsap.timeline();
+ 
 
-        tl.to(svgs,{duration:1, y:200, ease: "bounce", backgroundColor: "#000", borderRadius: "80%", border: "5px solid white"});
-        tl.to(svgs,{rotation: 360, duration:1.5, x:250, backgroundColor: "#fff", ease: "bounce" });
 
-        //tl.from(outline,{duration:1, y:1050, opacity:0, backgroundColor: "#fff", ease: "bounce" });
+       
+
         
-        tl.from(bigc, {duration: 1,opacity:0, scale:0.3 ,ease: "back"});
-        //tl.to(".outline",{duration: 1, opacity: 1});
-        tl.from(headingtext,{duration:1, opacity:0, scale:0.7,color: '#FFFA72'});
+   
+
+        var mediaQuery = window.matchMedia("(min-width: 769px)");
+
+        buildConditionalTween(mediaQuery);
+
+        
+        function buildConditionalTween(mediaQuery){
+        
+      
+
+
+         if(mediaQuery.matches) {
+
+                    tl.to(svgs,{duration:1, y:200, ease: "bounce", backgroundColor: "#000", borderRadius: "80%", border: "5px solid white"});
+                    tl.to(svgs,{rotation: 360, duration:1.5, x:250, backgroundColor: "#fff", ease: "bounce" });
+
+                    //tl.from(outline,{duration:1, y:1050, opacity:0, backgroundColor: "#fff", ease: "bounce" });
+
+                    tl.from(bigc, {duration: 1,opacity:0, scale:0.3 ,ease: "back"});
+                    //tl.to(".outline",{duration: 1, opacity: 1});
+                    tl.from(headingtext,{duration:1, opacity:0, scale:0.7,color: '#FFFA72'});
+         }
+
+         else{
+
+            tl.to(svgs,{duration:1, y:50, ease: "bounce", backgroundColor: "#000", borderRadius: "80%", border: "5px solid white"});
+                    tl.to(svgs,{rotation: 360, duration:1.5, x:50, backgroundColor: "#fff", ease: "bounce" });
+
+                    //tl.from(outline,{duration:1, y:1050, opacity:0, backgroundColor: "#fff", ease: "bounce" });
+                    
+                    tl.from(bigc, {duration: 1,opacity:0, scale:0.3 ,ease: "back"});
+                    //tl.to(".outline",{duration: 1, opacity: 1});
+                    tl.from(headingtext,{duration:1, opacity:0, scale:0.7,color: '#FFFA72'});
+         }
+        }
+
+        // Listen to changes
+        mediaQuery.addListener(buildConditionalTween);
+
 
   }
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container my-5">
-      <h2><router-link to="/work">Our Latest Work >>></router-link></h2>
+      <h2 class="sub-heading-text-work"><router-link to="/work">Our Latest Work</router-link></h2>
 
       <swiper class="swiper" :options="swiperOption">
         <swiper-slide v-for="item in ourwork" v-bind:key="item.id">
@@ -28,6 +28,15 @@
 </template>
 
 <style lang="scss">
+
+.sub-heading-text-work{
+  font-size: 3rem;
+  color: #333;
+  a {
+      text-decoration: none;
+      color: #333;
+  }
+}
  
 .swiper-slide {
   text-align: center;
@@ -49,8 +58,8 @@
   align-items: center;
 }
 .my-5 {
-  margin-top: 120px;
-  margin-bottom: 120px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .swiper-slide img {
   width: 100%;
@@ -68,11 +77,18 @@
   display: flex;
   transition-property: transform;
   box-sizing: content-box;
+  margin-bottom: 20px;
 }
 .swiper-container {
   width: 100%;
   height: 100%;
 }
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+}
+
 </style>
 
 <script>
@@ -92,10 +108,6 @@ export default {
         pagination: {
           el: ".swiper-pagination",
           clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
         },
         breakpoints: {
           1024: {

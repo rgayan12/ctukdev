@@ -71,6 +71,7 @@
 .vnb-image {
   width: 100%;
   height: auto;
+   filter: invert(100%);
 }
 
 .vnb__brand-image-wrapper__link {

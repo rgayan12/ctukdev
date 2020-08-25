@@ -63,6 +63,9 @@ body {
 import FooterComponent from "@/components/Footer.vue";
 import SocialFooter from "@/components/SocialFooter.vue";
 
+
+
+
 export default {
   name: "app",
   components: {
