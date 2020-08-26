@@ -86,7 +86,7 @@
 }
 
 .agile {
-  margin-top: -180px;
+  margin-top: -150px;
   z-index: 2;
 
   h1 {

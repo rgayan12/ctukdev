@@ -121,7 +121,7 @@
 @media (min-width: 1200px) {     
     
     .svgs{
-            width: 440px !important;
+            width: 300px !important;
     }    
     .heading-text{
         margin-top: 0;
